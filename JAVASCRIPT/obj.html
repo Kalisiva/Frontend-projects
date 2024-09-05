@@ -1,0 +1,87 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Objects and Arrays</title>
+</head>
+<body>
+    <h2>Creating and Modifying Objects</h2>
+    <button onclick="createAndModifyObject()">Create and Modify Object</button>
+    <pre id="objectOutput"></pre>
+
+    <h2>Accessing Object Properties and Methods</h2>
+    <button onclick="accessObjectProperties()">Access Object Properties and Methods</button>
+    <pre id="accessOutput"></pre>
+
+    <h2>Arrays and Array Methods</h2>
+    <button onclick="arrayMethods()">Array Methods</button>
+    <pre id="arrayOutput"></pre>
+
+    <script>
+        // Creating and Modifying Objects
+        function createAndModifyObject() {
+            // Creating an object
+            const person = {
+                name: 'Alice',
+                age: 25,
+                greet: function() {
+                    return `Hello, my name is ${this.name}`;
+                }
+            };
+
+            // Modifying an object
+            person.age = 26;
+            person.email = 'alice@example.com';
+
+            // Displaying the object
+            document.getElementById('objectOutput').textContent = JSON.stringify(person, null, 2);
+        }
+
+        // Accessing Object Properties and Methods
+        function accessObjectProperties() {
+            const car = {
+                brand: 'Toyota',
+                model: 'Corolla',
+                year: 2020,
+                getCarInfo: function() {
+                    return `${this.brand} ${this.model} (${this.year})`;
+                }
+            };
+
+            const brand = car.brand; // Accessing property
+            const carInfo = car.getCarInfo(); // Accessing method
+
+            document.getElementById('accessOutput').textContent = `Brand: ${brand}\nCar Info: ${carInfo}`;
+        }
+
+        // Arrays and Array Methods
+        function arrayMethods() {
+            const numbers = [1, 2, 3, 4, 5];
+
+            // push: Adds an element to the end of the array
+            numbers.push(6);
+
+            // pop: Removes the last element of the array
+            const lastElement = numbers.pop();
+
+            // map: Creates a new array with the results of calling a function on every element
+            const doubled = numbers.map(num => num * 2);
+
+            // filter: Creates a new array with all elements that pass the test implemented by the function
+            const even = numbers.filter(num => num % 2 === 0);
+
+            // reduce: Applies a function against an accumulator and each element in the array to reduce it to a single value
+            const sum = numbers.reduce((acc, num) => acc + num, 0);
+
+            document.getElementById('arrayOutput').textContent = 
+                `Original Array: ${JSON.stringify([1, 2, 3, 4, 5])}\n` +
+                `After push(6): ${JSON.stringify(numbers)}\n` +
+                `After pop(): ${JSON.stringify(numbers)} (popped element: ${lastElement})\n` +
+                `After map(num => num * 2): ${JSON.stringify(doubled)}\n` +
+                `After filter(num => num % 2 === 0): ${JSON.stringify(even)}\n` +
+                `After reduce((acc, num) => acc + num, 0): ${sum}`;
+        }
+    </script>
+</body>
+</html>

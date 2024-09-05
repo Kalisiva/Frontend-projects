@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation Examples</title>
+</head>
+<body>
+    <h2>Selecting Elements</h2>
+
+    <!-- getElementById Example -->
+    <p id="myParagraph">This is a paragraph.</p>
+
+    <!-- querySelector Example -->
+    <p class="myClass">This is a paragraph with class.</p>
+
+
+    <h2>Modifying Content and Attributes</h2>
+
+    <!-- Modifying Content Example -->
+    <p id="contentParagraph">Original content.</p>
+    <button onclick="changeContent()">Change Content</button>
+
+    <!-- Modifying Attributes Example -->
+    <img id="myImage" src="./old.jpeg" alt="Old Image">
+    <button onclick="changeImage()">Change Image</button>
+
+    <h2>Creating and Removing Elements</h2>
+
+    <!-- Creating Elements Example -->
+    <div id="container"></div>
+    <button onclick="addElement()">Add Element</button>
+
+    <!-- Removing Elements Example -->
+    <div id="removeContainer">
+        <p id="removeParagraph">This paragraph will be removed.</p>
+    </div>
+    <button onclick="removeElement()">Remove Element</button>
+
+    <script>
+        // Selecting Elements
+        function logParagraphById() {
+            const paragraph = document.getElementById('myParagraph');
+            console.log(paragraph.textContent); // Output: This is a paragraph.
+        }
+
+        function logParagraphByClass() {
+            const paragraph = document.querySelector('.myClass');
+            console.log(paragraph.textContent); // Output: This is a paragraph with class.
+        }
+
+        // Modifying Content
+        function changeContent() {
+            const paragraph = document.getElementById('contentParagraph');
+            paragraph.textContent = 'Updated content!';
+        }
+
+        // Modifying Attributes
+        function changeImage() {
+            const image = document.getElementById('myImage');
+            image.src = 'new-image.jpg';
+            image.alt = 'New Image';
+        }
+
+        // Creating Elements
+        function addElement() {
+            const newElement = document.createElement('h3');
+            newElement.textContent = 'This is a new paragraph.';
+            document.getElementById('container').appendChild(newElement);
+        }
+
+        // Removing Elements
+        function removeElement() {
+            const paragraph = document.getElementById('removeParagraph');
+            paragraph.parentNode.removeChild(paragraph);
+        }
+    </script>
+</body>
+</html>
