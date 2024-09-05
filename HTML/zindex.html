@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+.container{
+    position: relative;
+}
+.green{
+    position: relative;
+  z-index: 1;
+  border: 2px solid black;
+  height: 100px;
+  margin: 30px;
+  background-color: black;
+  color: white;
+}
+.red{
+    position: absolute;
+  z-index: 2;
+  background: lightgray;
+  height: 50px;  
+  width: 70%;
+  left: 50px;
+  top: 150px;
+}
+.yellow{
+    position: sticky;
+  z-index: 3; /* green box will be above black box */
+  background: lightgreen;
+  width: 35%;
+  left: 270px;
+  top: 80px;
+  height: 100px;
+
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+<div class="green">Green color z-index 1</div>
+<div class="red">Red color z-index 3</div>
+<div class="yellow">Yellow color z-index 2</div>
+
+
+
+    </div>
+    
+</body>
+</html>

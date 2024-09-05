@@ -1,0 +1,39 @@
+
+
+body{
+    background-image: url(./im2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+
+
+
+.border{
+    
+    border-radius: 20px;
+    text-align: center;
+    color: rgb(16, 17, 18);
+    border: 5px solid rgba(241, 240, 242, 0.53);
+
+    border: 3px solid rgb(21, 21, 21);
+    
+    width: 30%;
+    height: 300px;
+    text-decoration: none;
+    background-color:rgb(149, 149, 143);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding: 10px;
+    margin-top: 300px;
+    margin-left:500px;
+
+}
+
+h1 {
+    text-shadow: 2px 1px 5px #eaea13;
+  }
+
+
+
